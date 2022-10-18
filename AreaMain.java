@@ -6,6 +6,7 @@ public class AreaMain {
 		int choice;
 		double area;
 		float length, breadth, base, height, radius;
+		
 		System.out.println("*** MENU ***");
 		System.out.println("1.Area Of Square");
 		System.out.println("2.Ärea of Reactangle");

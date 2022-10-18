@@ -6,12 +6,13 @@ class Function {
 	double area;
 	float length, breadth, base, height, radius;
 
-	Scanner scan =new Scanner(System.in);
+	Scanner scan = new Scanner(System.in);
+
 	public void areaOfSquare() {
 		System.out.println("Enter length of Square");
 		length = scan.nextFloat();
 		area = length * length;
-		System.out.println("area of Square " + area );
+		System.out.println("area of Square " + area);
 	}
 
 	public void areaOfRectangle() {
@@ -21,7 +22,6 @@ class Function {
 		breadth = scan.nextFloat();
 		area = breadth * length;
 		System.out.println(" area of rectangle: " + area);
-
 
 	}
 
@@ -50,33 +50,43 @@ public class Area {
 
 	public static void main(String[] args) {
 		Function area = new Function();
+		while (true) {
+			System.out.println("*** MENU ***");
+			System.out.println("1.Area Of Square");
+			System.out.println("2.Ärea of Reactangle");
+			System.out.println("3.Area of Traingle");
+			System.out.println("4.Area of Circle");
+			System.out.println("Enter Your Choice");
 
-		System.out.println("*** MENU ***");
-		System.out.println("1.Area Of Square");
-		System.out.println("2.Ärea of Reactangle");
-		System.out.println("3.Area of Traingle");
-		System.out.println("4.Area of Circle");
-		System.out.println("Enter Your Choice");
+			Scanner scan = new Scanner(System.in);
+			int choice = scan.nextInt();
 
-		Scanner scan = new Scanner(System.in);
-		int choice = scan.nextInt();
+			switch (choice) {
 
-		switch (choice) {
+			case 1:
+				area.areaOfSquare();
+				break;
+			case 2:
+				area.areaOfRectangle();
+				break;
+			case 3:
+				area.areaOfTriangle();
+				break;
+			case 4:
+				area.areaOfCircle();
+				break;
 
-		case 1:
-			area.areaOfSquare();
-			break;
-		case 2:
-			area.areaOfRectangle();
-			break;
-		case 3:
-			area.areaOfTriangle();
-			break;
-		case 4:
-			area.areaOfCircle();
-			break;
+			default:
+				System.out.println("Invalid input");
+			}
+			System.out.println("Do you wanyyt to continue(y/n)");
+			char ch = scan.next().charAt(0);
+			if (ch == 'n') {
+				break;
+			}
 
 		}
-
+		System.out.println("Program is terminated");
 	}
+
 }
